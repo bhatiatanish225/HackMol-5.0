@@ -6,60 +6,73 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HistoryIcon from '@mui/icons-material/History';
 import SsidChartIcon from '@mui/icons-material/SsidChart';
-import SettingsIcon from '@mui/icons-material/Settings';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { Link } from 'react-router-dom';
-export const mainListItems = (
-  <React.Fragment>
-    <Link to='/dashboard'>
-    <ListItemButton>
+import { Link, useNavigate } from 'react-router-dom';
+
+const LogoutButton = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Clear any user authentication data (e.g., remove token from localStorage)
+    localStorage.removeItem('authToken');
+
+    // Redirect the user to the login page
+    navigate('/login');
+  };
+
+  return (
+    <ListItemButton onClick={handleLogout}>
       <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItemButton>
-    </Link>
-    <Link to='/payment'>
-    <ListItemButton >
-      <ListItemIcon>
-        <PaymentsIcon/>
-      </ListItemIcon>
-      <ListItemText primary="Make Payment" >
-      </ListItemText>
-    </ListItemButton>
-    </Link>
-    <Link to='/investments'>
-    <ListItemButton>
-      <ListItemIcon>
-        <SsidChartIcon/>
-      </ListItemIcon>
-      <ListItemText primary="Investments" />
-    </ListItemButton>
-    </Link>
-    <Link to='/history'>
-    <ListItemButton>
-      <ListItemIcon>
-        <HistoryIcon/>
-      </ListItemIcon>
-      <ListItemText primary="History" />
-    </ListItemButton>
-    </Link>
-    <Link to='/profile'>
-    <ListItemButton>
-      <ListItemIcon>
-        <AccountCircleIcon/>
-      </ListItemIcon>
-      <ListItemText primary="Profile" />
-    </ListItemButton>
-    </Link>
-    <Link to=''>
-    <ListItemButton>
-      <ListItemIcon>
-        <LogoutIcon/>
+        <LogoutIcon />
       </ListItemIcon>
       <ListItemText primary="Logout" />
     </ListItemButton>
+  );
+};
+
+export const mainListItems = (
+  <React.Fragment>
+    <Link to='/dashboard'>
+      <ListItemButton>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Dashboard" />
+      </ListItemButton>
     </Link>
+    <Link to='/payment'>
+      <ListItemButton>
+        <ListItemIcon>
+          <PaymentsIcon />
+        </ListItemIcon>
+        <ListItemText primary="Make Payment" />
+      </ListItemButton>
+    </Link>
+    <Link to='/investments'>
+      <ListItemButton>
+        <ListItemIcon>
+          <SsidChartIcon />
+        </ListItemIcon>
+        <ListItemText primary="Investments" />
+      </ListItemButton>
+    </Link>
+    <Link to='/history'>
+      <ListItemButton>
+        <ListItemIcon>
+          <HistoryIcon />
+        </ListItemIcon>
+        <ListItemText primary="History" />
+      </ListItemButton>
+    </Link>
+    <Link to='/profile'>
+      <ListItemButton>
+        <ListItemIcon>
+          <AccountCircleIcon />
+        </ListItemIcon>
+        <ListItemText primary="Profile" />
+      </ListItemButton>
+    </Link>
+    <LogoutButton />
   </React.Fragment>
 );

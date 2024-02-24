@@ -37,6 +37,7 @@ function App() {
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/addbalance' element={<AddBalance/>}></Route>
       <Route path='/checkbalance' element={<CheckBalance/>}></Route>
+      
     </Routes>
   </main>
 </React.Fragment>
