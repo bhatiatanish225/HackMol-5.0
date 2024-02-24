@@ -42,7 +42,7 @@ const rows = [
     4,
     '15 Mar, 2019',
     '#4659%324',
-    'Long Branch, NJ',
+    '10000',
     'VISA ⠀•••• 5919',
     212.79,
   ),
@@ -79,7 +79,7 @@ export default function Orders() {
         </TableBody>
       </Table>
       <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-        See more orders
+        See more Payments
       </Link>
     </React.Fragment>
   );
