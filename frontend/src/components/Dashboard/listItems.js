@@ -2,13 +2,11 @@ import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HistoryIcon from '@mui/icons-material/History';
 import SsidChartIcon from '@mui/icons-material/SsidChart';
 import SettingsIcon from '@mui/icons-material/Settings';
-import AssignmentIcon from '@mui/icons-material/Assignment';
 import PaymentsIcon from '@mui/icons-material/Payments';
 export const mainListItems = (
   <React.Fragment>
@@ -22,7 +20,8 @@ export const mainListItems = (
       <ListItemIcon>
         <PaymentsIcon/>
       </ListItemIcon>
-      <ListItemText primary="Make Payment" />
+      <ListItemText primary="Make Payment" >
+      </ListItemText>
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
