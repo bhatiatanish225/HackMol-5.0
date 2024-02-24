@@ -17,13 +17,21 @@ const userSchema=new Schema({
         required:true,
         minlength:6
     },
-    bankaccount:{
-        type:Number,
+    upi:{
+        type:String,
         // required:true
        },
     riskfactor:{
         type:Number,
         // required:true
+    },
+    upipin:{
+        type:Number,
+        // required:true
+    },
+    balance:{
+        type:Number,
+        //required:true
     }
     }
 );
