@@ -17,13 +17,15 @@ import PaymentDone from './components/Payment/PaymentDone.js';
 import IncorrectPass from './components/Payment/IncorrectPass.js';
 
 import Profile from './components/Profile/Profile.js';
+import MetaMaskLogin from './components/Login/MetaMaskLOgin.jsx';
 function App() {
   return <React.Fragment>
       
     
     <main>
     <Routes>
-      <Route path='/' element={<Dashboard/>}></Route>
+      <Route path='/' element={<MetaMaskLogin/>}></Route>
+      <Route path='/dashboard' element={<Dashboard/>}></Route>
       <Route path='/payment' element={<Payment/>}></Route>
       <Route path='/enteramount' element={<EnterAmount/>}></Route>
       <Route path='/auth' element={<Auth/>}></Route>
