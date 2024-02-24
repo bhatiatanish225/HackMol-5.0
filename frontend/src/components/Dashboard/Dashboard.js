@@ -119,7 +119,7 @@ export default function Dashboard() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-            
+            PaisaPocket
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">

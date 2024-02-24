@@ -14,6 +14,8 @@ import PaymentDone from './components/Payment/PaymentDone.js';
 import IncorrectPass from './components/Payment/IncorrectPass.js';
 
 import Profile from './components/Profile/Profile.js';
+import AddBalance from './components/Balance/AddBalance.js';
+import CheckBalance from './components/Balance/CheckBalance.js';
 function App() {
   return <React.Fragment>
       
@@ -31,6 +33,8 @@ function App() {
       <Route path='/done' element={<PaymentDone/>}></Route>
       <Route path='/again' element={<IncorrectPass/>}></Route>
       <Route path='/profile' element={<Profile/>}></Route>
+      <Route path='/addbalance' element={<AddBalance/>}></Route>
+      <Route path='/checkbalance' element={<CheckBalance/>}></Route>
 
 
 
