@@ -17,7 +17,7 @@ const Payment = () => {
     }
     console.log(UPIId);
   return (
-    <div>
+    <div >
          <Box
       maxWidth={400}
       height={270}
