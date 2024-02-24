@@ -12,14 +12,11 @@ import Investments from './components/Investment/Investments.js';
 
 import PaymentDone from './components/Payment/PaymentDone.js';
 import IncorrectPass from './components/Payment/IncorrectPass.js';
-import listItems from './components/Dashboard/listItems.js'
+
 import Profile from './components/Profile/Profile.js';
 function App() {
   return <React.Fragment>
-      <header>
-    <listItems></listItems>
-
-      </header>
+      
     
     <main>
     <Routes>
