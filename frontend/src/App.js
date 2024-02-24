@@ -6,6 +6,7 @@ import Payment from './components/Payment/Payment';
 import EnterAmount from './components/Payment/EnterAmount';
 import Auth from './components/Balance/Auth.js';
 import Balance from './components/Balance/Balance.js';
+import Investments from './components/Investment/Investments.js';
 
 function App() {
   return <React.Fragment>
@@ -16,6 +17,7 @@ function App() {
       <Route path='/enteramount' element={<EnterAmount/>}></Route>
       <Route path='/auth' element={<Auth/>}></Route>
       <Route path='/balance' element={<Balance/>}></Route>
+      <Route path='/investments' element={<Investments/>}></Route>
 
 
      
