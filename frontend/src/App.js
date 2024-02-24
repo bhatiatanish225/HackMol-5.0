@@ -15,7 +15,7 @@ import Register from './components/Login/Register.jsx';
 import SignIn from './components/Login/SignIn.jsx';
 import AddBalance from './components/Balance/AddBalance.js';
 import CheckBalance from './components/Balance/CheckBalance.js';
-import MetaMaskLogin from './components/Login/MetaMaskLOgin.jsx';
+
 
 function App() {
   return <React.Fragment>
@@ -36,6 +36,7 @@ function App() {
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/addbalance' element={<AddBalance/>}></Route>
       <Route path='/checkbalance' element={<CheckBalance/>}></Route>
+      
     </Routes>
   </main>
 </React.Fragment>
