@@ -1,11 +1,19 @@
 {
-  "name": "node",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "PaisaPocket",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "npm start"
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.2.0",
+    "nodemon": "^3.1.0"
+  }
 }
