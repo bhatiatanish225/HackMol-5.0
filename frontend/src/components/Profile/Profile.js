@@ -12,19 +12,19 @@ import { useNavigate } from 'react-router-dom';
 const marks = [
     {
       value: 0,
-      label: '0°C',
+      label: '0',
     },
     {
       value: 20,
-      label: '20°C',
+      label: '20',
     },
     {
-      value: 37,
-      label: '37°C',
+      value: 45,
+      label: '45',
     },
     {
       value: 100,
-      label: '100°C',
+      label: '100',
     },
   ];
   
@@ -52,8 +52,11 @@ const Profile = () => {
         <Typography gutterBottom variant="h5" component="div">
           Reyansh
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-            UPI ID
+        <Typography margin={'normal'} variant="body2" color="text.secondary">
+            Email ID
+        </Typography>
+        <Typography margin={'normal'} variant="body2" color="text.secondary">
+        UPI ID
         </Typography>
       </CardContent>
     </Card>

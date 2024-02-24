@@ -2,10 +2,18 @@ import * as React from 'react';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Title from './Title';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function Deposits() {
+  const navigate = useNavigate();
+  const [balance,setBalance]= React.useState('');
+
+  const handleNextButton = ()=>{
+      localStorage.setItem("balance",balance);
+      navigate("/checkbalance");
+  }
   return (
     <React.Fragment>
       <Title>Recent Deposits</Title>
@@ -17,7 +25,7 @@ export default function Deposits() {
       </Typography>
       <div>
         
-        <Link color="primary">
+        <Link color="primary" onClick={handleNextButton}>
           View balance
         </Link>
         
