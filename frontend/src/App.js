@@ -13,7 +13,7 @@ import Profile from './components/Profile/Profile.js';
 import AddBalance from './components/Balance/AddBalance.js';
 import CheckBalance from './components/Balance/CheckBalance.js';
 import MetaMaskLogin from './components/Login/MetaMaskLOgin.jsx';
-import History from './components/history/History.js';
+// import History from './components/history/History.js';
 
 function App() {
   return <React.Fragment>
@@ -33,7 +33,7 @@ function App() {
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/addbalance' element={<AddBalance/>}></Route>
       <Route path='/checkbalance' element={<CheckBalance/>}></Route>
-      <Route path='/history' element={<History/>}></Route>
+      {/* <Route path='/history' element={<History/>}></Route> */}
     </Routes>
   </main>
 </React.Fragment>
