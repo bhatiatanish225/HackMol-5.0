@@ -19,11 +19,11 @@ const userSchema=new Schema({
     },
     bankaccount:{
         type:Number,
-        required:true
+        // required:true
        },
     riskfactor:{
         type:Number,
-        required:true
+        // required:true
     }
     }
 );

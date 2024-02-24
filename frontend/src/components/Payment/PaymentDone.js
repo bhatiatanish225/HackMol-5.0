@@ -1,7 +1,17 @@
 import { Box, Button, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import DoneAllIcon from '@mui/icons-material/DoneAll';
+import { useNavigate } from 'react-router-dom';
 const PaymentDone = () => {
+  const navigate = useNavigate();
+  const [redirect, setRedirect] = useState('');
+
+ 
+
+  const handleNextButton = () => {
+      localStorage.setItem("redirect", redirect);
+      navigate("/dashboard");
+  }
   return (
     <>
     <Box
@@ -21,7 +31,7 @@ const PaymentDone = () => {
     <Typography sx={{ color: '#08456f' }} margin="normal">
         Payment Done!</Typography>
     
-    <Button margin='20px' sx={{ background: '#189ec8', color: 'white', marginTop:'20px' }}>Redirect To Dashboard</Button>
+    <Button onClick={handleNextButton} margin='20px' sx={{ background: '#189ec8', color: 'white', marginTop:'20px' }}>Redirect To Dashboard</Button>
 </Box>
         </>
   )
