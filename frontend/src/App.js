@@ -4,8 +4,6 @@ import Dashboard from './components/Dashboard/Dashboard'
 import React from 'react';
 import Payment from './components/Payment/Payment';
 import EnterAmount from './components/Payment/EnterAmount';
-import Auth from './components/Balance/auth';
-import Balance from './components/Balance/Balance';
 // import Header from './components/Header';
 function App() {
   return <React.Fragment>
@@ -19,8 +17,7 @@ function App() {
       <Route path='/' element={<Dashboard/>}></Route>
       <Route path='/payment' element={<Payment/>}></Route>
       <Route path='/enteramount' element={<EnterAmount/>}></Route>
-      <Route path='/auth' element={<Auth/>}></Route>
-      <Route path='/balance' element={<Balance/>}></Route>
+      
 
      
       
