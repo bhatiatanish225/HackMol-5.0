@@ -7,7 +7,7 @@ export default function SignIn() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errorMessage, setErrorMessage] = useState('');
-  
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -38,10 +38,7 @@ export default function SignIn() {
   };
 
   // Redirect to the dashboard if already authenticated
-  if (isAuthenticated()) {
-    navigate('/dashboard');
-    return null; // Render nothing if redirecting
-  }
+  
 
   
     return (
@@ -80,7 +77,7 @@ export default function SignIn() {
                     Password
                   </label>
                   <div className="text-sm">
-                    <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <a href="/" className="font-semibold text-indigo-600 hover:text-indigo-500">
                       Forgot password?
                     </a>
                   </div>
