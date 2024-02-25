@@ -26,7 +26,7 @@ export default function Auth() {
     borderRadius={5}>
         <h1>Enter Passcode </h1>
       <TextField id="outlined-basic" label="Pin" variant="outlined" margin="normal" type='password'/>
-      <Button onClick={handleNextButton} variant="contained" size="large" sx={{background:'linear-gradient(90deg, rgba(36,0,6,1) 0%, rgba(8,69,111,1) 16%, rgba(9,121,120,1) 50%, rgba(24,158,200,1) 100%)'}}>Validate</Button>
+      <Button onClick={handleNextButton} variant="contained" size="large" sx={{background:'#189ec8', color:'white'}} >Validate</Button>
     </Box>
   )
 }
