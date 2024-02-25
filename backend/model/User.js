@@ -1,4 +1,4 @@
-import mongoose, { trusted } from 'mongoose';
+import mongoose from 'mongoose';
 
 const Schema=mongoose.Schema;
 
@@ -31,7 +31,8 @@ const userSchema=new Schema({
     },
     balance:{
         type:Number,
-        //required:true
+        required:true,
+        default:0
     }
     }
 );

@@ -10,7 +10,6 @@ import Investments from './components/Investment/Investments.js';
 import PaymentDone from './components/Payment/PaymentDone.js';
 import IncorrectPass from './components/Payment/IncorrectPass.js';
 import Profile from './components/Profile/Profile.js';
-import MetaMaskLogin from './components/Login/MetaMaskLOgin.jsx';
 import Register from './components/Login/Register.jsx';
 import SignIn from './components/Login/SignIn.jsx';
 import AddBalance from './components/Balance/AddBalance.js';
