@@ -1,5 +1,5 @@
 # HackMol-5.0
-# Trustworthy Investing Platform
+# Trustworthy Investing Platform (PaisaPocket)
 
 ## Overview
 Welcome to Trustworthy Investing, an innovative platform designed to empower users to invest with confidence and security. Our platform combines automated investment strategies, risk assessment tools, and robust security measures to provide users with a seamless and trustworthy investment experience.
