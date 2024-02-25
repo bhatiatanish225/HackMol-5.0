@@ -26,5 +26,4 @@ We value your feedback and strive to continuously improve Trustworthy Investing 
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
-## Contact
-For inquiries, please contact us at [contact@trustworthyinvesting.com](mailto:contact@trustworthyinvesting.com).
+
