@@ -1,5 +1,7 @@
+import mongoose from "mongoose";
 import User from "../model/User.js";
  import bcrypt from "bcryptjs";
+
 
 export const getAllUser = async(req,res,next)=>{
     let users;
@@ -57,3 +59,31 @@ export const login=async(req,res,next)=>{
     }
     return res.status(200).json({message:"Login Successful",user:existingUser});
 };
+
+export const addmoney=async(req,res,next)=>{
+    try {
+        const { amount } = req.body;
+    const UserId=req.params.id;
+        // Find the user by their ID
+        let user = await User.findById(UserId);
+    
+        if (!user) {
+          return res.status(404).json({ message: 'User not found' });
+        }
+    
+        // Add the amount to the user's balance
+        user.balance += amount;
+    
+        // Save the updated user data
+        await user.save();
+    
+        // Send a success response
+        res.status(200).json({ message: 'Balance added successfully', newBalance: user.balance });
+      } catch (error) {
+        console.error('Error adding balance:', error);
+        res.status(500).json({ message: 'Internal server error' });
+      }
+    }
+
+
+    
