@@ -21,7 +21,7 @@ export default function Register() {
 
       // Optionally, you might want to wait for a few seconds before redirecting
       setTimeout(() => {
-        navigate('/login'); // Navigate to the login page
+        navigate('/'); // Navigate to the login page
       }, 3000); // Redirect after 3 seconds (adjust the delay as needed)
     } catch (error) {
       console.error('Error during registration:', error.response?.data);
