@@ -6,7 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
-
+import { useNavigate } from 'react-router-dom';
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
   return { id, date, name, shipTo, paymentMethod, amount };
@@ -48,11 +48,16 @@ const rows = [
   ),
 ];
 
-function preventDefault(event) {
-  event.preventDefault();
-}
+
 
 export default function Orders() {
+  const navigate = useNavigate();
+  const [history,setHistory]= React.useState('');
+
+  const handleNextButton = ()=>{
+      localStorage.setItem("history",history);
+      navigate("/history");
+  }
   return (
     <React.Fragment>
       <Title>Recent Payments</Title>
@@ -78,7 +83,8 @@ export default function Orders() {
           ))}
         </TableBody>
       </Table>
-      <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
+      
+      <Link onClick={handleNextButton} color="primary" href="#"  sx={{ mt: 3 }}>
         See more Payments
       </Link>
     </React.Fragment>

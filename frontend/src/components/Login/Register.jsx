@@ -1,24 +1,35 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
 export default function Register() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/user/signup', formData);
-      console.log(response.data); // You can handle success messages or redirects here
+      const response = await axios.post('http://localhost:5000/api/user/signup', formData);
+      console.log(response.data);
 
-      // Optionally, you might want to redirect the user to a login page after successful registration
-      // Example: history.push('/login');
+      setSuccessMessage('User registered successfully!'); // Set success message
+      setErrorMessage(''); // Clear any previous error messages
+
+      // Optionally, you might want to wait for a few seconds before redirecting
+      setTimeout(() => {
+        navigate('/'); // Navigate to the login page
+      }, 3000); // Redirect after 3 seconds (adjust the delay as needed)
     } catch (error) {
       console.error('Error during registration:', error.response?.data);
-      // Handle registration failure (show an error message, etc.)
+      setSuccessMessage(''); // Clear any previous success messages
+      setErrorMessage('Registration failed. Please try again.'); // Set error message
     }
   };
+
 
   return (
     <>
@@ -30,6 +41,8 @@ export default function Register() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        {successMessage && <p className="text-green-600">{successMessage}</p>}
+          {errorMessage && <p className="text-red-600">{errorMessage}</p>}
           <form className="space-y-6" onSubmit={handleRegister}>
             <div>
               <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">

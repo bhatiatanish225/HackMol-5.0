@@ -1,8 +1,46 @@
 import MetaMaskLogin from "./MetaMaskLOgin";
-
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link,useNavigate} from "react-router-dom";
+import axios from 'axios';
 
 export default function SignIn() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Assuming you have an API endpoint for user login
+      const response = await axios.post('http://localhost:5000/api/user/login', formData);
+
+      // Assuming the API returns a token upon successful login
+      const token = response.data.token;
+
+      // You can store the token in localStorage or a state management solution like Redux
+      localStorage.setItem('token', token);
+
+      setErrorMessage(''); // Clear any previous error messages
+
+      // Navigate to the dashboard after successful login using useNavigate
+      navigate('/dashboard');
+    } catch (error) {
+      console.error('Error during login:', error.response?.data);
+      setErrorMessage('Invalid email or password. Please try again.');
+    }
+  };
+
+  // Check if the user is already authenticated
+  const isAuthenticated = () => {
+    const token = localStorage.getItem('token');
+    return !!token; // Convert to boolean
+  };
+
+  // Redirect to the dashboard if already authenticated
+  
+
+  
     return (
       <>
        
@@ -15,7 +53,7 @@ export default function SignIn() {
           </div>
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6"  onSubmit={handleLogin}>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                   Email address
@@ -28,6 +66,7 @@ export default function SignIn() {
                     autoComplete="email"
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
               </div>
@@ -38,7 +77,7 @@ export default function SignIn() {
                     Password
                   </label>
                   <div className="text-sm">
-                    <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <a href="/" className="font-semibold text-indigo-600 hover:text-indigo-500">
                       Forgot password?
                     </a>
                   </div>
@@ -50,6 +89,7 @@ export default function SignIn() {
                     type="password"
                     autoComplete="current-password"
                     required
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -64,6 +104,7 @@ export default function SignIn() {
                 </button>
               </div>
             </form>
+            {errorMessage && <p className="mt-2 text-red-600">{errorMessage}</p>}
   
             <p className="mt-10 text-center text-sm text-gray-500">
               Not a member?{' '}
